@@ -31,3 +31,8 @@ NOTE:
         that windows firewall or antiviruses will not be able to identify it as legit .exe file from some company. That will lead to 
         False positive in both cases. It is smart to not run unknown .exe file, in that case, just download AutoIt3 and run the source 
         code provided if you are worried. Cheers.
+
+
+DOWNLOAD:
+
+        https://github.com/KeshHere/POE-Timeless-Jewel-Finder/releases/tag/v1.0-beta
