@@ -10,7 +10,7 @@
 
 
 
-Local $hGUI = GUICreate("POE Jewel Finder",550,550) ;gui create
+Local $hGUI = GUICreate("POE Jewel Finder-v1.4",550,550) ;gui create
 GUISetFont(10)
 GUISetBkColor(0xFFFFFF)
 
