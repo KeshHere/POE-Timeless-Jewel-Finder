@@ -27,6 +27,7 @@ Source Code running:
 
 NOTE:
 
-        As I do not have my own license to distribute [it costs like 300-600$ per year] the .exe file provided is un-signed. That means that windows firewall or antiviruses
-        will not be able to identify it as legit .exe file from some company. That will lead to False positive in both cases. It is smart to not run unknown .exe file, in
-        that case, just download AutoIt3 and run the source code provided if you are worried. Cheers.
+        As I do not have my own license to distribute [it costs like 300-600$ per year] the .exe file provided is un-signed. That means 
+        that windows firewall or antiviruses will not be able to identify it as legit .exe file from some company. That will lead to 
+        False positive in both cases. It is smart to not run unknown .exe file, in that case, just download AutoIt3 and run the source 
+        code provided if you are worried. Cheers.
