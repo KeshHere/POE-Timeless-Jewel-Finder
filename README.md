@@ -4,7 +4,7 @@ Find the best timeless Jewel seed for your needs in POE
 
     This is still in beta, so if you encounter any bugs or mistakes please feel free to let me know.
 
-After initial discovery of how Timeless Jewels work https://github.com/majorregal/TimelessEmulator here, all the seeds and their effects has been brute forced.
+After initial discovery of how Timeless Jewels work https://github.com/majorregal/TimelessEmulator here, all the seeds and their effects have been brute forced.
 
 Using that dataset and this application, you can easily find the best code for your needs.
 
