@@ -92,7 +92,7 @@ While 1
 			for $line in $array
 				if $line <> '' Then
 					$FOUND = 0
-					Global $FOUND[5] = [0,0,0,0,0]
+					Global $FOUND[10] = [0,0,0,0,0,0,0,0,0,0]
 					$splitline = StringSplit($line,',')
 					if $splitline[1] <> '' Then
 ;~ 						ConsoleWrite('####################################')
@@ -141,7 +141,7 @@ While 1
 ;~ 						ConsoleWrite('total found = '&$FOUNDTOTAL)
 ;~ 						ConsoleWrite(@CRLF)
 						If $FOUNDTOTAL >= GUICtrlRead($howmanyneed) Then
-							GUICtrlSetData($output,GUICtrlRead($output)&$splitline[1]&' seed -FOUND - ('&$FOUND[0]&','&$FOUND[1]&','&$FOUND[2]&','&$FOUND[3]&','&$FOUND[4]&')'&@CRLF)
+							GUICtrlSetData($output,GUICtrlRead($output)&$splitline[1]&' seed -FOUND - ('&$FOUND[0]&','&$FOUND[1]&','&$FOUND[2]&','&$FOUND[3]&','&$FOUND[4]&','&$FOUND[5]&','&$FOUND[6]&','&$FOUND[7]&','&$FOUND[8]&','&$FOUND[9]&')'&@CRLF)
 						EndIf
 					EndIf
 				EndIf
