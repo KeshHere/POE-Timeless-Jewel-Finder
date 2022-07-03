@@ -32,6 +32,9 @@ NOTE:
         that windows firewall or antiviruses will not be able to identify it as legit .exe file from some company. That will lead to 
         False positive in both cases. It is smart to not run unknown .exe file, in that case, just download AutoIt3 and run the source 
         code provided if you are worried. Cheers.
+        
+        Its currently limited to max 5 stats you want to get. I didn't think anyone would want more than that variables in one search. 
+        If its needed and popular opinion, it is easy to add more in future.
 
 
 DOWNLOAD:
