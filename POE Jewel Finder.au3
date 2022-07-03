@@ -69,12 +69,14 @@ While 1
 			GUICtrlSetState($jewelchangecombo, $GUI_FOCUS)
 			GUICtrlSetData($ChosenList,GUICtrlRead($ChosenList)&guictrlread($jewelchangecombo)&@CRLF)
 		Case $next1
+			GUICtrlSetData($jewelchangecombo,'')
 			GUICtrlSetState($jewelchangecombo, $GUI_FOCUS)
 			if GUICtrlRead($JewelCombo) == 'Elegant Hubris' Then GUICtrlSetData($jewelchangecombo, $hubrislist)
 			if GUICtrlRead($JewelCombo) == 'Brutal Restraint' Then GUICtrlSetData($jewelchangecombo, $restraintlist)
 			if GUICtrlRead($JewelCombo) == 'Lethal Pride' Then GUICtrlSetData($jewelchangecombo, $pridelist)
 			if GUICtrlRead($JewelCombo) == 'Militant Faith' Then GUICtrlSetData($jewelchangecombo, $faithlist)
 		Case $GO
+			GUICtrlSetData($output,'')
 			$chosenpassivelist = StringSplit(GUICtrlRead($PassiveList),@CRLF,2)
 			if GUICtrlRead($JewelCombo) == 'Elegant Hubris' Then $filetoread = "ElegantHubrisSeeds.csv"
 			if GUICtrlRead($JewelCombo) == 'Brutal Restraint' Then $filetoread = "BrutalRestraintSeeds.csv"
