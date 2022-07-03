@@ -76,6 +76,7 @@ While 1
 			if GUICtrlRead($JewelCombo) == 'Lethal Pride' Then GUICtrlSetData($jewelchangecombo, $pridelist)
 			if GUICtrlRead($JewelCombo) == 'Militant Faith' Then GUICtrlSetData($jewelchangecombo, $faithlist)
 		Case $GO
+			ToolTip("Running, Please wait...")
 			GUICtrlSetData($output,'')
 			$chosenpassivelist = StringSplit(GUICtrlRead($PassiveList),@CRLF,2)
 			if GUICtrlRead($JewelCombo) == 'Elegant Hubris' Then $filetoread = "ElegantHubrisSeeds.csv"
@@ -134,6 +135,7 @@ While 1
 
 
 		MsgBox(0,'Search','DONE')
+		ToolTip('')
 	EndSwitch
 
 WEnd
