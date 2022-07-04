@@ -39,6 +39,6 @@ NOTE:
 
 DOWNLOAD:
 
-        POE.Jewel.Finder.zip in https://github.com/KeshHere/POE-Timeless-Jewel-Finder/releases
+        POE.Timeless.Jewel.Finder.zip in https://github.com/KeshHere/POE-Timeless-Jewel-Finder/releases
         
 PS: If someone wants to make a cute icon for the exe, I am all ears. Msg me at Kesh#3236 :D
