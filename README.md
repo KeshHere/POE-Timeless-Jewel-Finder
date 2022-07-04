@@ -30,11 +30,17 @@ NOTE:
 
         As I do not have my own license to distribute [it costs like 300-600$ per year] the .exe file provided is un-signed. That means 
         that windows firewall or antiviruses will not be able to identify it as legit .exe file from some company. That will lead to 
-        False positive in both cases. It is smart to not run unknown .exe file, in that case, just download AutoIt3 and run the source 
-        code provided if you are worried. Cheers.
+        False positive in both cases. 
         
-        Its currently limited to max 5 stats you want to get. I didn't think anyone would want more than that variables in one search. 
-        If its needed and popular opinion, it is easy to add more in future.
+        This is known issue with unsigned applications especially in AutoIt language.
+
+        I think the reason why previous versions were not flagged and this latest ones will be flagged is because I added functionality of 
+        Saving and Loading Configs, which is basically modifying local files to save and reading them to load. So that Windows Defender is  
+        alerted that an unsigned/unknown application is trying to read or modify our local files and gives out warning.
+
+        In any case, it is good practise to not run .exe from unknown sources so I don't blame you. If you don't trust the app, you can 
+        always run the Source Code itself after reading through it.
+        
 
 
 DOWNLOAD:
