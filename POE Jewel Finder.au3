@@ -11,7 +11,7 @@
 
 
 
-Local $hGUI = GUICreate("Timeless Jewel Finder-v1.6-beta",770,530) ;gui create
+Local $hGUI = GUICreate("Timeless Jewel Finder-v1.7-beta",770,530) ;gui create
 GUISetFont(10)
 GUISetBkColor(0xFFFFFF)
 
@@ -217,7 +217,7 @@ While 1
 			if GUICtrlRead($JewelCombo) == 'Lethal Pride' Then GUICtrlSetData($jewelchangecombo, $pridelist)
 			if GUICtrlRead($JewelCombo) == 'Militant Faith' Then GUICtrlSetData($jewelchangecombo, $faithlist)
 		Case $GO
-			ToolTip("Running, Please wait...")
+;~ 			ToolTip("Running, Please wait...")
 			GUICtrlSetData($output,'')
 			$chosenpassivelist = StringSplit(GUICtrlRead($PassiveList),@CRLF,2)
 			if GUICtrlRead($JewelCombo) == 'Elegant Hubris' Then $filetoread = "ElegantHubrisSeeds.csv"
@@ -229,8 +229,6 @@ While 1
 
 			for $line in $array
 				if $line <> '' Then
-					if GUIGetMsg() = $GUI_EVENT_CLOSE Then Exit
-
 					GUICtrlSendMsg($output, 0xB7, 0, 0)
 					$FOUND = 0
 					Global $FOUND[10] = [0,0,0,0,0,0,0,0,0,0]
@@ -279,8 +277,12 @@ While 1
 						For $j = 0 to UBound($FOUND) - 1
 							$FOUNDTOTAL = $FOUNDTOTAL + $FOUND[$j]
 						Next
-						If $FOUND[0] >= GUICtrlRead($chosen1count) And $FOUND[1] >= GUICtrlRead($chosen2count) And $FOUND[2] >= GUICtrlRead($chosen3count) And $FOUND[3] >= GUICtrlRead($chosen4count) And $FOUND[4] >= GUICtrlRead($chosen5count) And $FOUND[5] >= GUICtrlRead($chosen6count) And $FOUND[6] >= GUICtrlRead($chosen7count) And $FOUND[7] >= GUICtrlRead($chosen8count) And $FOUND[8] >= GUICtrlRead($chosen9count) And $FOUND[9] >= GUICtrlRead($chosen10count) and $FOUNDTOTAL >= GUICtrlRead($totalminimum) Then
-							GUICtrlSetData($output,GUICtrlRead($output)&$splitline[1]&' seed -FOUND - ('&$FOUND[0]&','&$FOUND[1]&','&$FOUND[2]&','&$FOUND[3]&','&$FOUND[4]&','&$FOUND[5]&','&$FOUND[6]&','&$FOUND[7]&','&$FOUND[8]&','&$FOUND[9]&')'&@CRLF)
+
+						if $FOUNDTOTAL >= GUICtrlRead($totalminimum) Then
+;~ 							ConsoleWrite($FOUNDTOTAL)
+							If $FOUND[0] >= GUICtrlRead($chosen1count) And $FOUND[1] >= GUICtrlRead($chosen2count) And $FOUND[2] >= GUICtrlRead($chosen3count) And $FOUND[3] >= GUICtrlRead($chosen4count) And $FOUND[4] >= GUICtrlRead($chosen5count) And $FOUND[5] >= GUICtrlRead($chosen6count) And $FOUND[6] >= GUICtrlRead($chosen7count) And $FOUND[7] >= GUICtrlRead($chosen8count) And $FOUND[8] >= GUICtrlRead($chosen9count) And $FOUND[9] >= GUICtrlRead($chosen10count) Then
+								GUICtrlSetData($output,GUICtrlRead($output)&$splitline[1]&' seed -FOUND - ('&$FOUND[0]&','&$FOUND[1]&','&$FOUND[2]&','&$FOUND[3]&','&$FOUND[4]&','&$FOUND[5]&','&$FOUND[6]&','&$FOUND[7]&','&$FOUND[8]&','&$FOUND[9]&')'&@CRLF)
+							EndIf
 						EndIf
 					EndIf
 				EndIf
@@ -293,7 +295,8 @@ While 1
 
 
 
-		ToolTip('')
+;~ 		ToolTip('')
+		GUICtrlSetData($counter,'DONE')
 		MsgBox(0,'Search','DONE')
 
 	EndSwitch
