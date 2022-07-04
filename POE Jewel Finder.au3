@@ -11,7 +11,7 @@
 
 
 
-Local $hGUI = GUICreate("Timeless Jewel Finder-v1.8-beta",770,530) ;gui create
+Local $hGUI = GUICreate("Timeless Jewel Finder-v1.9-beta",770,530) ;gui create
 GUISetFont(10)
 GUISetBkColor(0xFFFFFF)
 
@@ -69,8 +69,8 @@ $nearPerfectAgony = StringReplace("From the Shadows,Forces of Nature,Split Shot,
 $nearTheAgnostic = StringReplace("Endurance,Divine Judgement,Divine Wrath,Runesmith,Sanctum of Thought,Divine Fervour,Holy Dominion,Overcharge,Faith and Steel,Devotion,Divine Fury,Arcane Capacitor,Smashing Strikes,Light of Divinity",',',@CRLF)
 $nearEternalYouth = StringReplace("Sanctuary,Combat Stamina,Dynamo,Sanctity,Gravepact,Expertise,Steelwood Stance,Powerful Bond,Deep Breaths,Ancestral Knowledge,Blacksmith's Clout",',',@CRLF)
 $nearEldritchBattery = StringReplace("Arcing Blows,Light Eater,Physique,Influence,Fusillade,Whispers of Doom,Alacrity,Searing Heat,Elder Power,Efficient Explosives,Mysticism,Successive Detonations,Throatseeker,Disintegration,Cleansed Thoughts,Utmost Intellect",',',@CRLF)
-
-$nearList = "26725, near: Cleaving|36634, near: Mind Over Matter|33989, near: Supreme Ego|41263, near: Pain Attunement|60735, near: Wind Dancer|61834, near: Ghost Dance|31683, near: Iron Grip|28475, near: Unwavering Stance|6230, near: Iron Will|48768, near: Solipsism|34483, near: Elemental Equilibrium|7960, near: Zealot's Oath|46882, near: Point Blank|55190, near: Divine Shield|2491, near: Call to Arms|54127, near: Measured Fury|32763, near: Perfect Agony|26196, near: The Agnostic|33631, near: Eternal Youth|21984, near: Eldritch Battery"
+$nearDoomsday = StringReplace("Enigmatic Defence,Heart of Ice,Mental Rapidity,Prodigal Perfection,Breath of Lightning,Breath of Flames,Skittering Runes,Mystic Bulwark,Instability,Breath of Rime,Cruel Preparation,Wandslinger,Deep Thoughts,Arcane Will,Lord of the Dead,Golem Commander,Discord Artisan,Infused Flesh,Presage,Frost Walker,Heart of Thunder,Essence Surge",',',@CRLF)
+$nearList = "61419, near: Doomsday|26725, near: Cleaving|36634, near: Mind Over Matter|33989, near: Supreme Ego|41263, near: Pain Attunement|60735, near: Wind Dancer|61834, near: Ghost Dance|31683, near: Iron Grip|28475, near: Unwavering Stance|6230, near: Iron Will|48768, near: Solipsism|34483, near: Elemental Equilibrium|7960, near: Zealots Oath|46882, near: Point Blank|55190, near: Divine Shield|2491, near: Call to Arms|54127, near: Measured Fury|32763, near: Perfect Agony|26196, near: The Agnostic|33631, near: Eternal Youth|21984, near: Eldritch Battery"
 
 $nearcombo = GUICtrlCreateCombo("", 10, 80, 180, 25)
 GUICtrlSetData($nearcombo, $nearList)
@@ -172,6 +172,7 @@ While 1
 			if GUICtrlRead($nearcombo) == '26196, near: The Agnostic' Then GUICtrlSetData($PassiveList, $nearTheAgnostic)
 			if GUICtrlRead($nearcombo) == '33631, near: Eternal Youth' Then GUICtrlSetData($PassiveList, $nearEternalYouth)
 			if GUICtrlRead($nearcombo) == '21984, near: Eldritch Battery' Then GUICtrlSetData($PassiveList, $nearEldritchBattery)
+			if GUICtrlRead($nearcombo) == '61419, near: Doomsday' Then GUICtrlSetData($PassiveList, $nearDoomsday)
 
 		Case $question
 			MsgBox(0,'Note',"It doesn't have to be total of the above 10 mod counts. Its just to filter out lower combinations. Let's say you want 2 aura atleast and 3 of the other good mods. Put in 2 as minimum count beside aura (above) and then put in 5 [2 + 3] in How many[minimum total] so it doesn't out put combinations like 2+(1+1) etc and only gives 2+(1+1+1) as minimum.")
