@@ -11,7 +11,7 @@
 
 
 
-Local $hGUI = GUICreate("Timeless Jewel Finder-v1.5",770,530) ;gui create
+Local $hGUI = GUICreate("Timeless Jewel Finder-v1.6-beta",770,530) ;gui create
 GUISetFont(10)
 GUISetBkColor(0xFFFFFF)
 
@@ -52,6 +52,9 @@ GUICtrlCreateLabel("Choose what you want to get in those passives",235,100,200,5
 $jewelchangecombo = GUICtrlCreateCombo("", 220, 140, 230, 25)
 $add2 = GUICtrlCreateButton("Add",310,170,40,25)
 
+GUICtrlCreateLabel("Counter",307,220,50,25)
+$counter = GUICtrlCreateInput("0",305,240,50,25)
+
 GUICtrlCreateLabel("Chosen",580,10,200,25)
 GUICtrlCreateLabel("Min. Count",730,5,50,40)
 $Chosen1 = GUICtrlCreateInput("",500,40,200,25,$ES_RIGHT)
@@ -86,6 +89,10 @@ $chosen10count = GUICtrlCreateInput("0",735,310,25,25)
 Global $AllChosen1to10 = [$Chosen1,$Chosen2,$Chosen3,$Chosen4,$Chosen5,$Chosen6,$Chosen7,$Chosen8,$Chosen9,$Chosen10]
 Global $AllChosenCount = [$chosen1count,$chosen2count,$chosen3count,$chosen4count,$chosen5count,$chosen6count,$chosen7count,$chosen8count,$chosen9count,$chosen10count]
 
+GUICtrlCreateLabel("Total count[minimum total]",500,350,155,25)
+$totalminimum = GUICtrlCreateInput("3",680,345,25,25)
+$question = GUICtrlCreateButton("?",655,345,25,25)
+
 $save = GUICtrlCreateButton("Save current configs",500,380,250,50)
 $load = GUICtrlCreateButton("Load saved configs",500,450,250,50)
 
@@ -101,6 +108,7 @@ GUICtrlCreateLabel('8',710,252,25,25)
 GUICtrlCreateLabel('9',710,282,25,25)
 GUICtrlCreateLabel('10',710,312,25,25)
 
+
 $GO = GUICtrlCreateButton("GO!",10,280,470,30)
 $output=GUICtrlCreateEdit("",10,320,470,200,BitOR($WS_VSCROLL,$ES_AUTOVSCROLL,$ES_READONLY))
 
@@ -111,6 +119,8 @@ While 1
 	Switch GUIGetMsg()
 		Case $GUI_EVENT_CLOSE
 			Exit
+		Case $question
+			MsgBox(0,'Note',"It doesn't have to be total of the above 10 mod counts. Its just to filter out lower combinations. Let's say you want 2 aura atleast and 3 of the other good mods. Put in 2 as minimum count beside aura (above) and then put in 5 [2 + 3] in How many[minimum total] so it doesn't out put combinations like 2+(1+1) etc and only gives 2+(1+1+1) as minimum.")
 		Case $save
 			$savename= InputBox("Prompt","Enter name to save as:")
 			if $savename <> '' Then
@@ -137,6 +147,7 @@ While 1
 				IniWrite($savename,'General','chosen8value',GUICtrlRead($chosen8count))
 				IniWrite($savename,'General','chosen9value',GUICtrlRead($chosen9count))
 				IniWrite($savename,'General','chosen10value',GUICtrlRead($chosen10count))
+				IniWrite($savename,'General','totalmin',GUICtrlRead($totalminimum))
 			EndIf
 		Case $load
 			$loadfile = FileOpenDialog("Choose the config",@ScriptDir,"All (*.*)")
@@ -165,6 +176,7 @@ While 1
 				GUICtrlSetData($chosen8count,IniRead($loadfile,'General','chosen8value',''))
 				GUICtrlSetData($chosen9count,IniRead($loadfile,'General','chosen9value',''))
 				GUICtrlSetData($chosen10count,IniRead($loadfile,'General','chosen10value',''))
+				GUICtrlSetData($totalminimum,IniRead($loadfile,'General','totalmin','3'))
 			EndIf
 		Case $add
 			GUICtrlSetState($hCombo, $GUI_FOCUS)
@@ -224,6 +236,7 @@ While 1
 					Global $FOUND[10] = [0,0,0,0,0,0,0,0,0,0]
 					$splitline = StringSplit($line,',')
 					if $splitline[1] <> '' Then
+						GUICtrlSetData($counter,$splitline[1])
 ;~ 						ConsoleWrite('####################################')
 ;~ 						ConsoleWrite(@CRLF)
 ;~ 						ConsoleWrite($splitline[1])
@@ -262,8 +275,11 @@ While 1
 								Next
 							EndIf
 						Next
-
-						If $FOUND[0] >= GUICtrlRead($chosen1count) And $FOUND[1] >= GUICtrlRead($chosen2count) And $FOUND[2] >= GUICtrlRead($chosen3count) And $FOUND[3] >= GUICtrlRead($chosen4count) And $FOUND[4] >= GUICtrlRead($chosen5count) And $FOUND[5] >= GUICtrlRead($chosen6count) And $FOUND[6] >= GUICtrlRead($chosen7count) And $FOUND[7] >= GUICtrlRead($chosen8count) And $FOUND[8] >= GUICtrlRead($chosen9count) And $FOUND[9] >= GUICtrlRead($chosen10count) Then
+						$FOUNDTOTAL = 0
+						For $j = 0 to UBound($FOUND) - 1
+							$FOUNDTOTAL = $FOUNDTOTAL + $FOUND[$j]
+						Next
+						If $FOUND[0] >= GUICtrlRead($chosen1count) And $FOUND[1] >= GUICtrlRead($chosen2count) And $FOUND[2] >= GUICtrlRead($chosen3count) And $FOUND[3] >= GUICtrlRead($chosen4count) And $FOUND[4] >= GUICtrlRead($chosen5count) And $FOUND[5] >= GUICtrlRead($chosen6count) And $FOUND[6] >= GUICtrlRead($chosen7count) And $FOUND[7] >= GUICtrlRead($chosen8count) And $FOUND[8] >= GUICtrlRead($chosen9count) And $FOUND[9] >= GUICtrlRead($chosen10count) and $FOUNDTOTAL >= GUICtrlRead($totalminimum) Then
 							GUICtrlSetData($output,GUICtrlRead($output)&$splitline[1]&' seed -FOUND - ('&$FOUND[0]&','&$FOUND[1]&','&$FOUND[2]&','&$FOUND[3]&','&$FOUND[4]&','&$FOUND[5]&','&$FOUND[6]&','&$FOUND[7]&','&$FOUND[8]&','&$FOUND[9]&')'&@CRLF)
 						EndIf
 					EndIf
