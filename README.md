@@ -2,7 +2,7 @@
 Find the best timeless Jewel seed for your needs in POE
 
 
-    This is still in beta, so if you encounter any bugs or mistakes please feel free to let me know. You need all 4 CSV files and 
+    This is still in beta, so if you encounter any bugs or mistakes please feel free to let me know. You need all 5 CSV files and 
     either .exe or source file .au3 to run the program.
 
 After initial discovery of how Timeless Jewels work https://github.com/majorregal/TimelessEmulator here, all the seeds and their effects have been brute forced.
@@ -13,7 +13,7 @@ Here is the little preview of how the program works..
 
 https://user-images.githubusercontent.com/98942518/177046427-117a2be9-1689-4403-8dc5-45ceb6c1b578.mp4
 
-All the files needed to run are in the Zip format. It includes 4 CSV dataset for 4 different Jewels, 1 .exe file for direct run, and 1 .au3 file which contains source code.
+All the files needed to run are in the Zip format. It includes 5 CSV dataset for 5 different Jewels, 1 .exe file for direct run, and 1 .au3 file which contains source code.
 
 Direct running:
         
