@@ -1,5 +1,3 @@
-;removed floating notables from jewel groups
-
 #include <GuiConstants.au3>
 #Include <APIConstants.au3>
 #include <File.au3>
@@ -13,7 +11,7 @@
 
 
 
-Local $hGUI = GUICreate("Timeless Jewel Finder-v2.1-beta",770,530) ;gui create
+Local $hGUI = GUICreate("Timeless Jewel Finder-v2.2-beta",770,530) ;gui create
 GUISetFont(10)
 GUISetBkColor(0xFFFFFF)
 
@@ -90,8 +88,12 @@ GUICtrlCreateLabel("Choose what you want to get in those passives",235,100,200,5
 $jewelchangecombo = GUICtrlCreateCombo("", 220, 140, 230, 25)
 $add2 = GUICtrlCreateButton("Add",310,170,40,25)
 
-GUICtrlCreateLabel("Counter",307,220,50,25)
-$counter = GUICtrlCreateInput("0",305,240,50,25)
+GUICtrlCreateLabel("Counter",252,220,50,25)
+$counter = GUICtrlCreateInput("0",250,240,50,25)
+
+GUICtrlCreateLabel("Trade seed",350,220,100,25)
+$tradenum = GUICtrlCreateInput("",350,240,70,25)
+$trade = GUICtrlCreateButton("Trade",430,240,50,25)
 
 GUICtrlCreateLabel("Chosen",580,10,200,25)
 GUICtrlCreateLabel("Min. Count",730,5,50,40)
@@ -157,6 +159,23 @@ While 1
 	Switch GUIGetMsg()
 		Case $GUI_EVENT_CLOSE
 			Exit
+		Case $trade
+			$nums = guictrlread($tradenum)
+			if GUICtrlRead($JewelCombo) == '' Then
+				MsgBox(0,'Error', 'Please choose timeless jewel first')
+			else
+				if GUICtrlRead($JewelCombo) == 'Elegant Hubris' Then $tradelink ="{%22query%22:{%22status%22:{%22option%22:%22online%22},%22stats%22:[{%22type%22:%22count%22,%22filters%22:[{%22id%22:%22explicit.pseudo_timeless_jewel_caspiro%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_cadiro%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_victario%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false}],%22value%22:{%22min%22:1}}]},%22sort%22:{%22price%22:%22asc%22}}"
+				if GUICtrlRead($JewelCombo) == 'Brutal Restraint' Then $tradelink = "{%22query%22:{%22status%22:{%22option%22:%22online%22},%22stats%22:[{%22type%22:%22count%22,%22filters%22:[{%22id%22:%22explicit.pseudo_timeless_jewel_asenath%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_balbala%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_nasima%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false}],%22value%22:{%22min%22:1}}]},%22sort%22:{%22price%22:%22asc%22}}"
+				if GUICtrlRead($JewelCombo) == 'Lethal Pride' Then $tradelink ="{%22query%22:{%22status%22:{%22option%22:%22online%22},%22stats%22:[{%22type%22:%22count%22,%22filters%22:[{%22id%22:%22explicit.pseudo_timeless_jewel_akoya%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_kaom%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_rakiata%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false}],%22value%22:{%22min%22:1}}]},%22sort%22:{%22price%22:%22asc%22}}"
+				if GUICtrlRead($JewelCombo) == 'Militant Faith' Then $tradelink ="{%22query%22:{%22status%22:{%22option%22:%22online%22},%22stats%22:[{%22type%22:%22count%22,%22filters%22:[{%22id%22:%22explicit.pseudo_timeless_jewel_avarius%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_dominus%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_maxarius%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false}],%22value%22:{%22min%22:1}}]},%22sort%22:{%22price%22:%22asc%22}}"
+				if GUICtrlRead($JewelCombo) == 'Glorious Vanity' Then $tradelink = "{%22query%22:{%22status%22:{%22option%22:%22online%22},%22stats%22:[{%22type%22:%22count%22,%22filters%22:[{%22id%22:%22explicit.pseudo_timeless_jewel_ahuana%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_doryani%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false},{%22id%22:%22explicit.pseudo_timeless_jewel_xibaqua%22,%22value%22:{%22min%22:"&$nums&",%22max%22:"&$nums&"},%22disabled%22:false}],%22value%22:{%22min%22:1}}]},%22sort%22:{%22price%22:%22asc%22}}"
+
+				if $nums <> '' Then
+					ShellExecute('https://www.pathofexile.com/trade/search/Sentinel?q='&$tradelink)
+				Else
+					MsgBox(0,'Error', 'Please input a number in the trade box')
+				EndIf
+			EndIf
 		Case $nearcombo
 			GUICtrlSetData($PassiveList,'')
 			if GUICtrlRead($nearcombo) == '26725, near: Cleaving' Then GUICtrlSetData($PassiveList, $nearCleaving)
