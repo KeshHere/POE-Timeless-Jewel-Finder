@@ -83,7 +83,6 @@ GUICtrlSetData($nearcombo, $nearList)
 
 
 
-
 GUICtrlCreateLabel("Choose what you want to get in those passives",235,100,200,50)
 $jewelchangecombo = GUICtrlCreateCombo("", 220, 140, 230, 25)
 $add2 = GUICtrlCreateButton("Add",310,170,40,25)
