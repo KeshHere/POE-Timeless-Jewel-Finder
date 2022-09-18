@@ -62,16 +62,16 @@ $nearIronGrip = StringReplace("Window of Opportunity,Battle Rouse,Path of the Wa
 $nearUnwaveringStance = StringReplace("Eagle Eye,Berserking,Bloodletting,Martial Experience,Admonisher,Command of Steel,Prismatic Skin",',',@CRLF)
 $nearIronWill = StringReplace("Potency of Will,Foresight,Dreamer,Path of the Warrior,Decay Ward,Forethought,Relentless,Malicious Intent,Path of the Savant,Inspiring Bond,Ash Frost and Storm,Veteran Soldier,Constitution,Totemic Zeal,Shaper",',',@CRLF)
 $nearSolipsism = StringReplace("Potency of Will,Foresight,Window of Opportunity,Path of the Hunter,Destructive Apparatus,True Strike,Harrier,Path of the Savant,Reflexes,Inspiring Bond,Thrill Killer,Hired Killer,Exceptional Performance,Leadership",',',@CRLF)
-$nearElementalEquilibrium = StringReplace("Avatar of the Hunt,Burning Brutality,Crystal Skin,Profane Chemistry,Heavy Draw,Art of the Gladiator,Deadly Draw,Weathered Hunter,Hardened Scars,Gladiator's Perseverance",',',@CRLF)
+$nearElementalEquilibrium = StringReplace("Avatar of the Hunt,Burning Brutality,Crystal Skin,Profane Chemistry,Heavy Draw,Art of the Gladiator,Deadly Draw,Weathered Hunter,Gladiator's Perseverance",',',@CRLF)
 $nearZealotsOath = StringReplace("Might,Arcane Guarding,Death Attunement,Serpent Stance,Acrimony,Corruption,Fearsome Force,Hex Master,Unnatural Calm,Agility,Prism Weave,Blunt Trauma,Enigmatic Reach",',',@CRLF)
-$nearPointBlank = StringReplace("Twin Terrors,Dazzling Strikes,Longshot,Thick Skin,Marked for Death,Feller of Foes,Blade Barrier,Fangs of Frost,Utmost Swiftness,Aspect of Stone,Bladedancer",',',@CRLF)
-$nearDivineShield = StringReplace("Skull Cracking,Vanquisher,Sanctum of Thought,Counterweight,Bone Breaker,Persistence,Whirling Barrier,Smashing Strikes,Shamanistic Fury,Disemboweling",',',@CRLF)
+$nearPointBlank = StringReplace("Twin Terrors,Dazzling Strikes,Longshot,Thick Skin,Marked for Death,Feller of Foes,Blade Barrier,Fangs of Frost,Utmost Swiftness,Bladedancer",',',@CRLF)
+$nearDivineShield = StringReplace("Skull Cracking,Vanquisher,Sanctum of Thought,Counterweight,Bone Breaker,Whirling Barrier,Smashing Strikes,Shamanistic Fury,Disemboweling",',',@CRLF)
 $nearCallToArms = StringReplace("Executioner,Steadfast,Tribal Fury,Lava Lash,Blade of Cunning,Bastion Breaker",',',@CRLF)
 $nearMeasuredFury = StringReplace("Surveillance,Golem's Blood,Vigour,Revelry,Deflection,Assured Strike,Cloth and Chain,Savagery,Ribcage Crusher,Dervish,Titanic Impacts,Master of the Arena,Destroyer,Measured Fury,Testudo,Bravery,Art of the Gladiator,Adamant,Defiance,Mana Flows,Dirty Techniques,Fury Bolts",',',@CRLF)
-$nearPerfectAgony = StringReplace("From the Shadows,Forces of Nature,Split Shot,Clever Thief,Hunter's Gambit,Silent Steps,Piercing Shots,Survivalist,Fatal Toxins,Careful Conservationist,Trick Shot,Vengeant Cascade,Inveterate,Heartseeker",',',@CRLF)
+$nearPerfectAgony = StringReplace("From the Shadows,Forces of Nature,Split Shot,Clever Thief,Hunter's Gambit,Silent Steps,Piercing Shots,Survivalist,Fatal Toxins,Careful Conservationist,Trick Shot,Inveterate,Heartseeker",',',@CRLF)
 $nearTheAgnostic = StringReplace("Endurance,Divine Judgement,Divine Wrath,Runesmith,Sanctum of Thought,Divine Fervour,Holy Dominion,Overcharge,Faith and Steel,Devotion,Divine Fury,Arcane Capacitor,Smashing Strikes,Light of Divinity",',',@CRLF)
 $nearEternalYouth = StringReplace("Sanctuary,Combat Stamina,Dynamo,Sanctity,Gravepact,Expertise,Steelwood Stance,Powerful Bond,Deep Breaths,Ancestral Knowledge,Blacksmith's Clout",',',@CRLF)
-$nearEldritchBattery = StringReplace("Arcing Blows,Light Eater,Physique,Influence,Fusillade,Whispers of Doom,Alacrity,Searing Heat,Elder Power,Efficient Explosives,Mysticism,Successive Detonations,Throatseeker,Disintegration,Cleansed Thoughts,Utmost Intellect",',',@CRLF)
+$nearEldritchBattery = StringReplace("Arcing Blows,Light Eater,Physique,Influence,Fusillade,Whispers of Doom,Alacrity,Searing Heat,Elder Power,Efficient Explosives,Mysticism,Successive Detonations,Throatseeker,Disintegration,Utmost Intellect",',',@CRLF)
 $nearDoomsday = StringReplace("Enigmatic Defence,Heart of Ice,Mental Rapidity,Prodigal Perfection,Breath of Lightning,Breath of Flames,Skittering Runes,Mystic Bulwark,Instability,Breath of Rime,Cruel Preparation,Wandslinger,Deep Thoughts,Arcane Will,Lord of the Dead,Golem Commander,Discord Artisan,Infused Flesh,Presage,Frost Walker,Heart of Thunder,Essence Surge",',',@CRLF)
 $nearList = "61419, near: Doomsday|26725, near: Cleaving|36634, near: Mind Over Matter|33989, near: Supreme Ego|41263, near: Pain Attunement|60735, near: Wind Dancer|61834, near: Ghost Dance|31683, near: Iron Grip|28475, near: Unwavering Stance|6230, near: Iron Will|48768, near: Solipsism|34483, near: Elemental Equilibrium|7960, near: Zealots Oath|46882, near: Point Blank|55190, near: Divine Shield|2491, near: Call to Arms|54127, near: Measured Fury|32763, near: Perfect Agony|26196, near: The Agnostic|33631, near: Eternal Youth|21984, near: Eldritch Battery"
 
@@ -309,7 +309,7 @@ While 1
 
 			$array = FileReadToArray($filetoread)
 			if $array = '' Then
-				MsgBox(0,'Error', 'Please download the 5 CSV files from first zip in release section of GITHUB and put it in the same folder as this app.')
+				MsgBox(0,'Error', 'Please download the 5 CSV files from GITHUB (They are in 2 zips on main page) and put it in the same folder as this app.')
 				Exit
 			EndIf
 			for $line in $array
@@ -347,8 +347,8 @@ While 1
 ;~ 										ConsoleWrite(@CRLF)
 
 										if $splitline[$checkcolumn+2] == StringReplace($chosen,' ','_') or $splitline[$checkcolumn+2] == $chosen Then
-;~ 											ConsoleWrite('FOUND-'&$splitline[1]&'-'&$AllPassiveArray[$checkcolumn]&'-'&$chosen)
-;~ 											ConsoleWrite(@CRLF)
+											ConsoleWrite('FOUND-'&$splitline[1]&'-'&$AllPassiveArray[$checkcolumn]&'-'&$chosen)
+											ConsoleWrite(@CRLF)
 											$FOUND[$chosennum] +=1
 ;~ 											ConsoleWrite('found = '&$FOUND[$chosennum])
 ;~ 											ConsoleWrite(@CRLF)
