@@ -3,7 +3,7 @@ Find the best timeless Jewel seed for your needs in POE
 
 
     This is still in beta, so if you encounter any bugs or mistakes please feel free to let me know. You need all 5 CSV files and 
-    either .exe or source file .au3 to run the program.
+    source file .au3 to run the program.
 
 After initial discovery of how Timeless Jewels work https://github.com/majorregal/TimelessEmulator here, all the seeds and their effects have been brute forced.
 
@@ -13,20 +13,28 @@ Here is the little preview of how the program works..
 
 https://user-images.githubusercontent.com/98942518/177046427-117a2be9-1689-4403-8dc5-45ceb6c1b578.mp4
 
-All the files needed to run are in the Zip format. It includes 5 CSV dataset for 5 different Jewels, 1 .exe file for direct run, and 1 .au3 file which contains source code.
+All the files needed to run are in the Zip format. It includes 5 CSV dataset for 5 different Jewels and 1 .au3 file which contains source code.
 
-Direct running:
+
+Direct running: (Not possible for latest and future releases)
         
-        After downloading the zip file and extracting the data, you can just double click "POE Jewel Finder.exe" to run it directly.
-    
-Source Code running:
+        After downloading the zip file and extracting the data, you can just double click ".exe" to run it directly.
+        
+        I have decided to remove executable file from future releases for below reasons
+            -AutoHotKey and AutoIt both are frequently used by script kiddies and hackers for easy malicious apps
+            -This causes many false positives in various anti-viruses and people panic over it (rightfully so)
+            -This false positives can lead to banning of my Github profile, it happened last month with other tool dev
+
+      
+Source Code running: (This is the only way to run latest releases)
 
         It is written in AutoIt3, it is like AHK but I know better about AutoIt3 than AHK so I chose this. 
-        Here is the link to the page to download AutoIt3 https://www.autoitscript.com/site/autoit/downloads/
+        Here is the link to the page to download AutoIt3 official https://www.autoitscript.com/site/autoit/downloads/
         After installing, just double click .au3 file to run the program.
 
 
-NOTE:
+
+NOTE: (For old releases)
 
         As I do not have my own license to distribute [it costs like 300-600$ per year] the .exe file provided is un-signed. That means 
         that windows firewall or antiviruses will not be able to identify it as legit .exe file from some company. That will lead to 
