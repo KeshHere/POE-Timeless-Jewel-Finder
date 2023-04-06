@@ -1,6 +1,7 @@
-# POE-Timeless-Jewel-Finder
+# POE-Timeless-Jewel-Finder Updated for 3.21
 Find the best timeless Jewel seed for your needs in POE
 
+Please look at https://github.com/KeshHere/TimelessJewelData if you use just the CSVs for your use as there have been some changes.
 
     This is still in beta, so if you encounter any bugs or mistakes please feel free to let me know. You need all 5 CSV files and 
     source file .au3 to run the program.
