@@ -10,7 +10,6 @@
 #include <FileConstants.au3>
 
 
-
 Local $hGUI = GUICreate("Timeless Jewel Finder-v2.9-beta",770,530) ;gui create
 GUISetFont(10)
 GUISetBkColor(0xFFFFFF)
